@@ -1,0 +1,19 @@
+Conditions in Javascript
+
+if else
+ternary operator
+using && and ||
+Optional Chaining
+Spread Operator && Rest Operator
+
+(1) Spread Operator ----
+Denoted by three consecutive dots (…)
+Used to expand an iterable into individual elements
+Can be used anywhere in an array literal or function call
+Creates a new array with copied elements
+
+Rest Operator -----
+Denoted by three consecutive dots (…)
+Used in function parameters to gather arguments
+Must be the last parameter in a function’s parameter list
+Gathers remaining arguments into an array

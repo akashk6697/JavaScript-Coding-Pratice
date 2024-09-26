@@ -1,0 +1,295 @@
+JS Array
+JS String
+JS Functions
+JS OOPS
+Prototype 
+Prototype chaining
+Prototype Inheritance
+Event Loop
+Event Delegation
+Event Propagation ---- Event Bubbling and Event Capturing
+Hoisting
+Scope
+Closures
+IIFE
+map filter reduce
+call bind apply
+array and object destructuring
+First class Functions
+Callback
+Callback Hell
+Promise
+Promise Chaining
+Callback vs Promise
+Async / Await
+
+
+(1) Working of JavaScript ----
+JavaScript is a synchronous (Moves to the next line only when the execution of the current line is completed)
+ and single-threaded (Executes one command at a time in a specific order one after another serially) language. 
+Everything in JavaScript happens inside an execution context.
+
+Execution Context: Everything in JavaScript is wrapped inside Execution Context, which is an abstract concept
+ (can be treated as a container) that holds the whole information about the environment within which the 
+ current JavaScript code is being executed.
+
+Now, an Execution Context has two components and JavaScript code gets executed in two phases.
+
+Memory Allocation Phase(Memory Component): In this phase, all the functions and variables of the JavaScript code 
+get stored as a key-value pair inside the memory component of the execution context. 
+In the case of a function, JavaScript copied the whole function into the memory block but in the case of 
+variables, it assigns undefined as a placeholder.
+Code Execution Phase(Code Component): In this phase, the JavaScript code is executed one line at a time inside the Code
+ Component (also known as the Thread of execution) of Execution Context. 
+
+Call Stack(Execution context stack): When a program starts execution JavaScript pushes the whole program as
+global context into a stack  which is known as Call Stack and continues execution. Whenever JavaScript 
+executes a new context and just follows the same process and pushes to the stack. When the context finishes, 
+JavaScript just pops the top of  the stack accordingly.
+When JavaScript completes the execution of the entire code, the Global Execution Context gets deleted and 
+popped out from the Call Stack making the Call stack empty.
+Call Stack maintains the order of execution of execution contexts.
+
+
+(2) This keyword -----
+
+In JavaScript, this keyword refers to the current context or scope within which code is executing. Its value 
+is determined by how a function is called, and it can dynamically change depending on the invocation context.
+
+The this keyword refers to different objects depending upon how it is used:
+
+When used within a method of an object, this points to that object.
+When used by itself, this points to the global object.
+Within a function, this typically points to the global object.
+In a function under strict mode, this becomes undefined.
+During an event, this points to the element that triggered the event.
+Methods such as call(), apply(), and bind() can reassign this to any desired object.
+
+(3) Call Apply and Bind() ----
+   Bind() Method: The bind() method creates a new function and when that new function is called it set this
+    keyword to the first argument which is passed to the bind method, and if any other sequences of arguments
+    preceding the first argument are passed to the bind method then they are passed as an argument to the new 
+    function when the new function is called.
+  
+   Call() Method: The call() method calls the function directly and sets this to the first argument passed to 
+   the call method and if any other sequences of arguments preceding the first argument are passed to the call
+    method then they are passed as an argument to the function.
+   The call method doesn’t return a new function.
+
+   Apply() Method: The apply() method calls the function directly and sets this to the first argument passed 
+   to the apply method and if any other arguments provided as an array are passed to the call method then 
+   they are passed as an argument to the function.
+   
+   
+(4) == & ===
+  In Javascript, the ‘==’ operator is also known as the loose equality operator which is mainly used to compare 
+  two values on both sides and then return true or false. This operator checks equality only after converting 
+  both the values to a common type i.e type coercion.
+
+JavaScript ‘===’ operator: Also known as strict equality operator, it compares both the value and the type
+ which is why the name “strict equality”.
+
+
+(5) Prototype ----
+  JavaScript is a prototype-based, automatically adds a prototype property to functions upon creation. 
+  This prototype object allows attaching methods and properties, facilitating inheritance for all objects 
+  created from the function.
+
+  Prototype Inheritance in JavaScript -----
+
+  Under the classical inheritance phenomenon, we create a new class that actually extends or reuses the 
+  properties or functions, or methods of another class that are used by several programming languages 
+  (like C, C++, Java, etc.)
+  JavaScript doesn’t use classical inheritance instead it uses the phenomenon called Prototype Inheritance.
+  In Prototype Inheritance, an object uses the properties or methods of another object via the prototype 
+  linkage.
+
+All the JavaScript objects inherit properties and methods from a prototype (like Date objects inherit 
+properties from Date.prototype and so on).
+
+Prototype Inheritance with several following approaches-
+
+using __proto__ -----
+Using Object.setPrototypeOf() method -----
+
+What is a prototype chain -----
+Prototype chaining is used to build new types of objects based on existing ones. It is similar to inheritance 
+in a class based language. i.e, When you create an object using a constructor function or a class, the created
+ object inherits properties from a prototype object.
+
+The prototype on object instance is available through Object.getPrototypeOf(object) or __proto__ property 
+whereas prototype on constructor function is available through Object.prototype.
+
+(6) Ways to clone object(shallow and deep copy of object) ---
+     There are two ways to copy an object - Shallow Copy and deep Copy
+
+Shallow Copy: Shallow copy is a bitwise copy of an object. A new object is created that has an exact copy of 
+the values in the original object. If any of the fields of the object are references to other objects, 
+just the reference addresses are copied i.e., only the memory address is copied.
+
+Deep copy: A deep copy copies all fields, and makes copies of dynamically allocated memory pointed to by the 
+fields. A deep copy occurs when an object is copied along with the objects to which it refers.
+
+
+(7) Convert an object to an array ------
+There are many ways to convert an object to an array ---
+Using Object.values() method
+Using Object.keys() method
+Using Object.entries() method
+Using for…in Loop
+Using Object.getOwnPropertyNames() method
+Using Object.values() with Array.map()
+
+ 
+(8) isNaN function -----
+   The JavaScript isNaN() Function is used to check whether a given value is an illegal number or not. 
+   It returns true if the value is a NaN else returns false. It is different from the Number.isNaN() Method.
+
+     Syntax: isNaN( value )
+
+(9) Difference b/w Undeclared and undefined variable-----
+    Undeclared: It occurs when we try to access any variable that is not initialized or declared earlier 
+    using the var or const keyword. If we use ‘typeof’ operator to get the value of an undeclared variable,
+    we will face the runtime error with the return value as “undefined”.
+    The scope of the undeclared variables is always global. 
+
+    Undefined: It occurs when a variable has been declared but has not been assigned any value. 
+    Undefined is not a keyword. 
+
+(10) Fetch Api ----
+
+  The JavaScript fetch() method used for retrieving resources from a server. It returns a Promise, resolving to the Response object, which encapsulates the server’s response to the request. fetch() facilitates making both GET requests, typically employed for fetching data, and POST requests, utilized for posting data to servers.
+  Fetch API comes with the fetch() method, which is used to fetch data from different sources.
+
+  Syntax:
+
+   fetch('url') // api for the get request
+    .then(response => response.json())
+    .then(data => console.log(data));
+     
+     Axios ------
+     Axios is a Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser
+      and it supports the Promise API that is native to JS ES6. It can be used intercept HTTP requests and 
+      responses and enables client-side protection against XSRF. It also has the ability to cancel requests. 
+      Syntax: 
+
+axios.get('url')
+  .then((response) => {
+    // Code for handling the response
+  })
+  .catch((error) => {
+    // Code for handling the error
+  })
+
+
+(11) Fetch Api vs Axios------
+        Fetch Api -----
+      (1) Fetch has no url in request object.
+      (2) Fetch is built into most modern browsers; no installation is required as such.
+      (3) Fetch uses the body property.
+      (4) Fetch’s body has to be stringified.
+      (5) Fetch is a two-step process when handling JSON data- first, to make the actual request; second, to call the .json() method on the response.
+      (6) Fetch request is ok when response object contains the ok property.
+       
+       Axios ----
+       (1) Axios has url in request object.
+       (2) Axios is a stand-alone third party package that can be easily installed.
+       (3) Axios uses the data property.
+       (4) Axios data contains the object.
+       (5) Axios performs automatic transforms of JSON data.
+       (6) Axios request is ok when status is 200 and statusText is ‘OK’.
+
+(12) Template Literals  ------
+    Template literals are a new feature that was introduced in ECMAScript6, which offers a simple method
+    for performing string interpolation and multiline string creation.
+    Template Literals which are indicated by the backtick (` `) character. 
+    Template literals can also be used to hold the placeholders, that are indicated by the ‘$’ sign and the {}  braces such as (${expression}).
+
+
+(13) Async and defer in script tag -----
+   We generally connect our HTML page with external javascript with <script> tag. Traditionally, 
+   JavaScript <script> tags were often placed in the <head> section of the HTML document. However, doing so 
+   means that the parsing of the HTML is blocked until the JavaScript file is fetched and executed, leading to
+  slower page load times. Nowadays, we mostly prefer to keep the <script> tag after all the contents of the <body>
+  element to the page get loaded first.
+
+   <script src="example.js"></script>
+
+  Async ---
+
+  When we include a script with the async attribute, it tells the browser to download the script asynchronously 
+  while parsing the HTML document. The script is downloaded in the background without blocking the HTML 
+  parsing process.
+
+  Once the script is downloaded, it's executed asynchronously, meaning it can run at any time, even before the 
+  HTML document has finished parsing.
+    <script src="example.js" async></script>
+    
+ If multiple scripts are loaded asynchronously, they will execute as soon as they finish downloading, 
+ regardless of their order in the document. It is useful when the script doesn't depend on the DOM being
+ fully loaded or other scripts.
+
+    Defer -----
+
+   When we include a script with the defer attribute, it also tells the browser to download the script 
+   asynchronously while parsing the HTML document.
+   However, the execution of the script is deferred until after the HTML document has been parsed.
+  <script src="example.js" defer></script>
+
+  Scripts with the defer attribute will execute in the order they appear in the document.
+  It is useful when the script relies on the DOM being fully parsed or when script execution order is important.
+
+
+(14) setTimeout() and setInterval() -----
+     JavaScript SetTimeout and SetInterval are the only native function in JavaScript that is used to run code 
+     asynchronously, it means allowing the function to be executed immediately, there is no need to wait for 
+     the current execution completion, it will be for further execution.
+     
+     JavaScript setTimeout() Method  ------
+     This method executes a function, after waiting a specified number of milliseconds. 
+
+    Syntax: window.setTimeout(function, milliseconds);
+
+   Parameter:
+
+   function: the first parameter is a function to be executed
+   milliseconds: which indicates the number of milliseconds before the execution takes place.
+
+   We can even stop the execution of the setTimeout() function by using a method called as clearTimeout().
+   Syntax:  window.clearTimeout(value);
+
+   JavaScript setInterval() Method -----
+   The setInterval() method repeats a given function at every given time interval. 
+
+  Syntax: window.setInterval(function, milliseconds);
+
+Parameter: There are two parameters that accepted by this method
+
+function: the first parameter is the function to be executed
+milliseconds: indicates the length of the time interval between each execution.
+
+(15) JSON ------
+
+JSON stands for JavaScript Object Notation but it does not use JavaScript to perform operations, it just uses
+the JavaScript syntax. It is a light-weighted and language-independent format mainly used to transmit the data
+between the server and the web app.
+
+The JSON.parse() method is used to parse the JSON data into JavaScript and converts the JSON string into a
+ JavaScript object.
+
+Syntax : ---- JSON.parse(JSONString, function)
+
+The JSON.stringify() method is used to convert the JavaScript object into a JSON string format.
+
+Syntax : ----- JSON.stringify(JSONString, function, space)
+
+The JSON format follows the structure of the JavaScript object. It contains the key-value pairs in the form 
+of strings that can be transmitted from server to web app and vice-versa. The values stored in JSON can be
+retrieved in the same way as the values of JavaScript object are retrieved.
+
+Syntax : ---
+{
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3"
+}

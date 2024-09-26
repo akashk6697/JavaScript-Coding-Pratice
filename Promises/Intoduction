@@ -1,0 +1,44 @@
+(1) Promise ---
+
+A Promise is an object representing the eventual completion or failure of an asynchronous operation. Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function.”. Promises resolve the issue of ‘callback hell’ which is nothing but a recursive structure of callbacks (callbacks within callbacks within callbacks and so forth).
+A promise may be in three possible states…
+
+Fulfilled: When the operation is completed successfully.
+Rejected: When the operation is failed.
+Pending: initial state, neither fulfilled nor rejected.
+
+(2) Callback Vs Promise
+Callback ---
+The syntax is difficult to understand.
+Error handling may be hard to manage.
+It may create callback hell.
+
+Promise ----
+The syntax is user-friendly and easy to read because of then and catch.
+Error handling is easier to manage using catch block.
+It resolves callback hell.
+
+(3) Promise Chaining: Promise Chaining is a simple concept by which we may initialize another promise inside our .then() method and accordingly we may execute our results. The function inside then captures the value returned by the previous promise.
+
+(4) Differences between Callbacks, Promises, and Async/Await:
+
+      Callback -----
+     (1) Main focus --- Manage asynchronous
+     (2) Complexity --- Less readable because of nesting or callback hell
+     (3) Syntax  ---- Function-based structure
+     (4) Browser and Environment ---- JavaScript environments
+     (5) Way of Error Handling ---- error handling separately
+
+      Promises -----
+     (1) Main focus --- Deliver a more robust explanation for managing asynchronous operations
+     (2) Complexity --- More readable as compare to Callbacks
+     (3) Syntax  ---- Introduced the Promise object and methods like .then() and .catch()
+     (4) Browser and Environment ---- Modern web browsers and Node.js
+     (5) Way of Error Handling ---- error handling with .catch() method
+
+      Async / Await ----
+     (1) Main focus --- Make asynchronous code appears synchronous improve code quality
+     (2) Complexity --- Highly readable with clean code.
+     (3) Syntax  ---- Async and Await used
+     (4) Browser and Environment ---- Modern web browsers and Node.js
+     (5) Way of Error Handling ---- error handling using try and catch blocks

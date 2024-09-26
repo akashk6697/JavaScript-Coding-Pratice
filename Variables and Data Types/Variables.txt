@@ -1,0 +1,72 @@
+
+(1) var,let & const variables
+ var ---- 
+The scope of a var variable is functional or global scope.
+It can be updated and re-declared in the same scope.
+It can be declared without initialization.
+These variables are hoisted.
+
+let ---- 
+The scope of a let variable is block scope.
+It can be updated but cannot be re-declared in the same scope.
+It can be declared without initialization.
+These variables are hoisted but stay in the temporal dead zone untill the initialization.
+
+const -----
+The scope of a const variable is block scope.
+It can neither be updated or re-declared in any scope.
+It cannot be declared without initialization.
+These variables are hoisted but stays in the temporal dead zone until the initialization.
+
+(2) Data Types in JavaScript -----
+
+8 data types Out of which 7 data types are Primitive(predefined) and one complex or Non-Primitive.
+
+Primitive(predefined) data types --- in-built data types
+
+String, Number,Bigint,Boolean,Undefined,Null,Symbol
+
+Non-Primitive data types ---- Object
+
+The object data type can contain both built-in objects, and user defined objects:
+
+
+Built-in object types ----
+objects, arrays, dates, maps, sets, intarrays, floatarrays, promises, and more.
+
+(3) Hoisiting of variables ----
+
+Hoisting is the default behavior in JavaScript where variable and function declarations are moved to the 
+top of their respective scopes during the compilation phase. This allows variables to be accessed before
+ declaration, aiding in more flexible coding practices and avoiding “undefined” errors during execution.
+
+Features of Hoisting ----- 
+Declarations are hoisted, not initializations.
+Allows calling functions before their declarations.
+All variable and function declarations are processed before any code execution.
+Undeclared variables are implicitly created as global variables when assigned a value.
+
+(4) The Temporal Dead Zone -----
+The Temporal Dead Zone (TDZ) is a concept in JavaScript that relates to the hoisting of the variables and the
+ visibility of variables declared with let and const.
+ In the TDZ, a variable exists but it cannot be accessed until it is not declared.
+ This prevents the variable from being used or accessed before a value is assigned to it.
+
+ (5) Undefined Vs Null in JavaScript
+ Undefined means a variable has been declared but has yet not been assigned a value.
+ Null is an assignment value. It can be assigned to a variable as a representation of no value. 
+ It does not have any syntax. But you can assign undefined to any variable but we do not do that.
+ Its syntax is -: null
+ Undefined It is a global property.
+ Null It is not a global property.
+
+Example ---
+
+ let x; // variable declared but not initialized
+console.log(x); // Output: undefined
+   let y = null; // variable intentionally set to null
+console.log(y); // Output: null
+
+Type coercion ----
+Type coercion means that the two values are compared only after attempting to convert them into the same type.
+ 

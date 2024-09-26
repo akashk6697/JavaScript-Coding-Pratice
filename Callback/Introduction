@@ -1,0 +1,19 @@
+Asynchronous Events
+
+Callback
+Callback Hell
+Promises
+Promise Chaining
+Promise API
+
+(1) Callback ----
+
+A callback is a function passed as an argument to another function, which gets invoked after the main function completes its execution. You pass the callback function to the main function as an argument, and once the main function finishes its task, it calls the callback function to deliver a result.
+
+Callbacks enable you to handle the outcomes of asynchronous operations in a non-blocking way. This means your program can keep running while the operation is ongoing.
+
+(2) Callback Hell -----
+
+Callback hell is also known as the “pyramid of doom,”. This situation of callback hell is created when there are multiple nested callback functions are there which make the code complex and hard to read. This occurs mainly in the asynchronous programming environment like while handling async requests or file operations where the function doesn’t execute in the fixed order. The callbacks are chained within the callbacks, making the code structure look like a pyramid. Asynchronous operations often involve callbacks to handle responses or events. When numerous asynchronous tasks are performed sequentially, each dependent on the completion of the previous one, the code becomes deeply nested and challenging to maintain. This nesting of callback functions can lead to callback hell, as developers find it difficult to read and debug errors and struggle with indentation. To solve this problem of callback hell, developers use techniques like modularization, named functions, or by using modern features like Promises or async/await in JavaScript. 
+
+

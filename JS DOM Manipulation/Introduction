@@ -1,0 +1,62 @@
+What is DOM  
+The Document Object Model(DOM) is an application programming interface(API) for Manipulating HTML documents.
+The DOM provides functions that allow you to add, remove and modify parts of documents effectively.
+The DOM represents an HTML documents as a tree of nodes.
+What is nodes and type of nodes
+Selecting element using DOM
+
+  getElementByID()
+  getElementsByName()
+  getElementsByTagName()
+  getElementsByClassName()
+  querySelector() & querySelectorAll()
+
+
+
+Traversing element
+
+   selecting parent element
+   selecting child element
+   selecting sibling element
+
+Manipulating HTML elements 
+    
+    createElement()
+    appendChild()
+    textContent
+    innerHTML
+    after()
+    append()
+    prepend()
+    insertAdjacentHTML()
+    replaceChild()
+    cloneNode()
+    removeChild()
+    insertBefore()
+
+Attributes methods
+
+     getAttribute()
+     setAttribute() 
+     hasAttribute()
+     removeAttribute()
+
+Manipulating Element's style
+
+     style property
+     cssText
+     getComputedStyle()
+     className property
+     classList property
+
+
+Javascript Events
+
+      What is event
+      Event Bubbling & Event Capturing
+      Event Handler in HTML Attributes
+      DOM level 0 event handlers
+      addEventListener()
+      removeEventListener()
+      Event Objects
+      Different Types of Events

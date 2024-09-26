@@ -1,0 +1,123 @@
+(1)JavaScript Function ---
+The JavaScript function is a set of statements that take inputs, do some specific computation, and produce output.
+A JavaScript function is executed when “something” invokes it (calls it).
+
+(2) Arrow functions ------
+Arrow functions are anonymous functions i.e. they are functions without a name and are not bound by an 
+identifier. Arrow functions do not return any value and can be declared without the function keyword. 
+They are also called Lambda Functions.
+Arrow functions provides us with a more precise approach to writing JavaScript Functions.
+Arrow functions do not have the prototype property like this, arguments, or super.
+Arrow functions cannot be used with the new keyword.
+Arrow functions cannot be used as constructors.
+
+(3) Generator function ---- 
+A generator function uses the yield keyword to generate values, pausing execution and sending values to the 
+caller. It retains the state to resume execution after yield, continuing immediately after the last yield run.
+Generator functions return a generator object.
+
+Generator-Object :The Generator object is returned by a generating function and it conforms to both the 
+iterable protocol and the iterator protocol. Generator objects are used either by calling the next method on 
+the generator object.
+
+(4) Higher Order Function -----
+In JavaScript, a higher-order function is a function that can accept other functions as arguments, return 
+functions, or both. They enable abstraction, composition, and the creation of more flexible and reusable code.
+It can also take as well as return other types of values but it either has to take a function as a parameter 
+or return a function as its return value with them.
+
+(5) Curring Function -----
+   It is a technique that transforms the function of multiple arguments into several functions of a single
+      argument in sequence.
+    Curried functions are great to improve code reusability and functional composition.
+   Syntax ----
+   function simpleFunction(param1, param2, param3, .....) => function 
+    curriedFunction(param1)(param2)(param3)(.... 
+     
+  Why is currying useful in JavaScript?
+
+(1) It helps us to create a higher-order function
+(2) It reduces the chances of error in our function by dividing it into multiple smaller functions that 
+  can handle one responsibility.
+(3) It is very useful in building modular and reusable code
+(4) It helps us to avoid passing the same variable multiple times
+(5) It makes the code more readable
+
+(6) Pure Function -----
+   A Pure Function is a function (a block of code) that always returns the same result if the same arguments 
+   are passed. It does not depend on any state or data change during a program’s execution. Rather, 
+   it only depends on its input arguments.
+  Also, a pure function does not produce any observable side effects such as network requests or data mutation,
+   etc.
+
+(7) first Class function -----
+     
+     In Javascript, functions are first class objects. First-class functions means when functions in that 
+     language are treated like any other variable.
+
+For example, in such a language, a function can be passed as an argument to other functions, can be returned 
+by another function and can be assigned as a value to a variable. For example, in the below example, handler 
+functions assigned to a listener.
+
+  (8) first-order function ---
+
+  A first-order function is a function that doesn’t accept another function as an argument and doesn’t return 
+  a function as its return value.
+
+  (9) Async Function --- 
+     The async function allows us to write promise-based code as if it were synchronous. This ensures that the
+      execution thread is not blocked.
+
+
+ (10) Memorization ----
+  Memoization is a technique for speeding up applications by caching the results of expensive function calls 
+  and returning them when the same inputs are used again.
+
+  Expensive Function Calls: Time and memory are the two most important resources in computer applications. 
+  As a result, an expensive function call is one that consumes large amounts of these two resources due to 
+  extensive calculation during execution.
+
+  Cache: A cache is just a temporary data store that stores data in order to serve future requests for that 
+  data more quickly.
+   
+   When a function is given in input, it performs the necessary computation and saves the result in a cache 
+   before returning the value. If the same input is received again in the future, it will not be necessary to 
+   repeat the process. It would simply return the cached answer from the memory. This will result in a large 
+   reduction in a code’s execution time.
+
+    In JavaScript, the concept of memorization is based mostly on two ideas. They are as follows:
+
+    Closures
+     Higher-Order Functions
+
+
+(11) Immediately Invoked Function Expressions(IIFE) -----
+
+   Immediately Invoked Function Expressions (IIFE) are JavaScript functions that are executed immediately 
+   after they are defined. They are typically used to create a local scope for variables to prevent them from 
+   polluting the global scope.
+  
+  Example ---
+
+   (function() {
+    // IIFE code block
+    var localVar = 'This is a local variable';
+    console.log(localVar); // Output: This is a local variable
+})();
+
+
+Use Cases Of IIFE -----
+Avoid polluting the global namespace.
+To create closures in JavaScript.
+IIFE is used to create private and  public variables and methods.
+It is used to execute the async and await function.
+It is used to work with require function.
+
+(12) Anonymous function -----
+It is a function that does not have any name associated with it. Normally we use the function keyword before
+the function name to define a function in JavaScript, however, in anonymous functions in JavaScript, we use 
+only the function keyword without the function name.
+
+An anonymous function is not accessible after its initial creation, it can only be accessed by a variable it is
+stored in as a function as a value. An anonymous function can also have multiple arguments, but only one 
+expression.

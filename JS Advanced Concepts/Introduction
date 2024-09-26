@@ -1,0 +1,54 @@
+
+(1) Throttling ----
+Throttling is a technique that is used to throttle or ignore the continuous occurrence of a particular event or task for a particular interval of time and execute the code again after that specified time if the event or the task continues occurring. It can be used with the resize and the scroll events to avoid sending frequent server requests.
+
+Throttling is very commonly used on web pages which loads some data on scroll. It is used to send requests to the server after a particular interval of time if the user continues to scroll the web page. That is why you sometimes see the loading icon when you continuously scroll a web page like Instagram or Facebook.
+
+Advantages:
+
+(1) This decreases the frequency of function calls, which can assist in avoiding performance problems and optimizing resource consumption.
+(2) This is used to restrict the rate at which users enter data using their keyboards or mice in order to stop mistakes or undesirable behaviors.
+
+Disadvantages:
+
+(1) Given that the function will only be called at specific intervals, it could not respond right away.
+(2) If the throttle time is too long, some events can be skipped, which could cause a loss of detail.
+
+(2) Debouncing ----
+Debouncing: Debouncing is a technique where you delay the execution of a function until after a certain amount of time has passed. This is useful if you have a frequently used function—say, a scroll or resize event listener—and don’t want to trigger it too frequently because that might slow down the browser.
+
+Advantages: 
+
+(1) Decreases the frequency with which a function is invoked, which can enhance performance and avoid pointless effort. 
+(2) Prevents pointless network and API requests, which can conserve resources and cut expenses.
+(3) This can be utilized to handle frequent occurrences, such as scrolling or resizing, without taxing the system.
+
+Disadvantages: 
+
+(1) This may cause a function to take longer to complete, which might be problematic when a quick answer is needed. The result can in missed events if the debounce time is too long.
+
+(3) Throttling vs Debouncing -----
+Debouncing  ---
+Debouncing waits for a certain time before invoking the function again.
+Ensures that the function is called only once, even if the event is triggered multiple times.
+Useful when you want to delay the invocation of a function until a certain period of inactivity has passed.
+Eg. You can debounce an async API request function that is called every time the user types in an input field.
+
+Throttling ----
+Throttling limits the number of times the function can be called over a certain period.
+Ensures that the function is called at a regular interval, even if the event is triggered multiple times.
+Useful when you want to list the Frequency of function calls.
+Eg. You can throttle a slide change Function that is called every time the user clicks a button in a carousel.
+
+
+(4) Polyfills -----
+Polyfills are the implementation of the features that are given by our browsers,
+ but may not be present in the previous versions of it.
+
+Polyfill for bind method ---- using a prototype on the Object class
+
+ (5) Strict Mode ----
+ Strict Mode is a new feature in ECMAScript 5 that allows you to place a program or a function in a “strict” operating context. This strict context prevents certain actions from being taken and throws more exceptions. The statement “use strict” instructs the browser to use the Strict mode, which is a reduced and safer feature set of JavaScript.
+
+(6) Garbage Collection ----
+   

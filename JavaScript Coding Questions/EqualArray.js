@@ -1,0 +1,1 @@
+//Q1:Implement a function to check if two arrays are equal.

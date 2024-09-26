@@ -1,0 +1,75 @@
+(1) Event Loop
+In JavaScript, the event loop plays an important role in managing asynchronous operations and ensures the 
+non-blocking behavior of the language. JavaScript is single-threaded, meaning it processes one task at a time
+ and an event loop helps to handle asynchronous tasks efficiently. When an asynchronous operation, 
+ like a setTimeout callback or a user event, is initiated, it gets delegated to the browser’s APIs, allowing 
+ the main thread to remain unblocked. Once the operation is complete, a callback function is placed in the 
+ callback queue.
+
+The event loop continuously checks two main components: the call stack and the callback queue. 
+The call stack keeps track of the currently executing function or task, while the callback queue stores
+ callback functions waiting to be processed. If the call stack is empty, the event loop takes the first 
+ callback from the queue and pushes it onto the call stack for execution.
+
+(2) What is Event propagation, capturing, bubbling  ----
+
+Event Propagation determines in which order the elements receive the event. There are two ways to handle this
+ event propagation order of HTML DOM is Event Bubbling and Event Capturing.
+
+Event Bubbling ----
+Event bubbling is a method of event propagation in the HTML DOM API when an event is in an element inside 
+another element, and both elements have registered a handle to that event. It is a process that starts with
+ the element that triggered the event and then bubbles up to the containing elements in the hierarchy. 
+ In event bubbling, the event is first captured and handled by the innermost element and then propagated to 
+ outer elements.
+
+
+Syntax ---- addEventListener(type, listener, useCapture)
+
+Event Capturing is also one of the Event Propagation phases. It is also known as Event Trickling. 
+It is the opposite of the event bubbling phase. In event bubbling where the event bubbles out from the target
+element to its ancestors in the DOM hierarchy, here it will go down through the ancestor to the target element.
+This downward propagation of the events is known as Event Capturing. You can enable Event Capturing by passing
+ a third parameter as a true value to the addEventListener() method at the time of attaching an event using it.
+
+Syntax ---- selectedElement.addEventListener('event', callback, true);
+
+Handling an event’s propagation through the DOM -----
+
+event.preventDefault(): Stops the default browser behavior for that event.
+event.stopPropagation(): Stops the propagation of the event on the next elements (whether descendants in 
+the Capture phase, or ancestors in the Bubbling phase)
+event.stopImmediatePropagation(): Similar to “event.stopPropagation()”, but also stops the propagation on
+ other listeners in the same element.
+
+(3) Phases of JavaScript Event ----
+   
+   There are 3 different phases during the lifecycle of a JavaScript event.
+
+Capturing Phase
+Target Phase
+Bubbling Phase
+
+ Capturing Phase is when the event goes down to the element. The target phase is when the event reaches the 
+ element and the Bubbling phase is when the event bubbles up from the element.
+
+ The addEventListener() method will be called during the Bubbling phase.
+   The addEventListener() method attaches an event handler to the specified element.
+
+Syntax: element.addEventListener(event, function, useCapture)
+  The third parameter use capture is usually set to false as it is not used.
+(4) Event Delegation in JavaScript -----
+
+Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to 
+each and every similar element, we can add an event listener to a parent element and call an event on a 
+particular target using the .target property of the event object.
+
+
+Event Listeners
+
+onClick
+onBlur
+onChange
+onFocus
+
+setTimeout() & setInterval()
