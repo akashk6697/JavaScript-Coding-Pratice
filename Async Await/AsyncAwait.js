@@ -1,52 +1,46 @@
 ///// (1) async function example
-// const getData = async () => {
-//     let y = "Hello World";
-//     console.log(y);
-// }
+const getData = async () => {
+  let y = "Hello World";
+  console.log(y);
+};
 
-// console.log(1);
-// getData();
-//console.log(2);
+console.log(1);
+getData();
+console.log(2);
 
 ////// (2) Promise example
-//  let promise= new Promise((resolve,reject)=>{
-//     setTimeout(()=>{
-//   console.log("promise started")
-//   let error=false;
-//   if(!error){
-//     resolve({user:"raiyan",address:"mewatipur"})
-//   }
-//   else{
-//     reject("error aa gya hai")
-//   }
-
-//     },2000)
-//   })
-//   promise.then((data)=>{
-//     console.log(data)
-//     return data.user
-
-//   }).then((username)=>{
-//   console.log(username)
-//   })
-//   .catch((err)=>{
-//   console.log(err);
-
-//   })
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("promise started");
+    let error = false;
+    if (!error) {
+      resolve({ user: "raiyan", address: "mewatipur" });
+    } else {
+      reject("error aa gya hai");
+    }
+  }, 2000);
+});
+promise
+  .then((data) => {
+    console.log(data);
+    return data.user;
+  })
+  .then((username) => {
+    console.log(username);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 /////// (3) Fetch data
 
-//     fetch("https://jsonplaceholder.typicode.com/posts")
-
-//   .then((response)=>{
-
-//    return response.json()
-
-//   })
-//   .then((data)=>{
-//   console.log(data);
-
-//   })
+fetch("https://jsonplaceholder.typicode.com/posts")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  });
 
 ///// (4) async function
 

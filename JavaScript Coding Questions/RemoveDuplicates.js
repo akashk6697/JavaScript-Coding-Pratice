@@ -61,5 +61,3 @@ function removeDuplicates(arr) {
   return unique;
 }
 console.log(removeDuplicates(arr));
-
- 

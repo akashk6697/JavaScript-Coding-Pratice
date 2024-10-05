@@ -1,4 +1,4 @@
-///// 1st example 
+///// 1st example
 
 function Welcome(name) {
   var greetingInfo = function (message) {
