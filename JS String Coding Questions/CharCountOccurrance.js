@@ -1,6 +1,7 @@
-
+// count occurrences of each character in a string and remove white spaces
 
 function countCharOccurrences(str) {
+  str = str.replace(/\s+/g, '');
     let occurrences = {};
     for (let char of str) {
       occurrences[char] = (occurrences[char] || 0) + 1;

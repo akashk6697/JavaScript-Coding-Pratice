@@ -1,4 +1,4 @@
-//// determines if two strings are anagrams of each other
+////(1) determines if two strings are anagrams of each other
 
 function areAnagrams(str1, str2) {
   return str1.split("").sort().join("") === str2.split("").sort().join("");
@@ -41,4 +41,4 @@ function areAnagrams2(str1, str2) {
 
 const str3 = "Geeks";
 const str4 = "eksGe";
-console.log(areAnagrams1(str3, str4)); // Output: true
+console.log(areAnagrams(str3, str4)); // Output: true

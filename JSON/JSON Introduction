@@ -1,0 +1,97 @@
+JSON (JavaScript Object Notation) is a lightweight data format used for storing and exchanging data. It is easy for humans to read and write and easy for machines to parse and generate.
+
+{
+    "name": "Akash",
+    "age": 25,
+    "skills": ["React", "Redux", "JavaScript"],
+    "experience": {
+        "company": "Cognizant",
+        "role": "Frontend Developer",
+        "years": 2.3
+    }
+}
+
+Key Features of JSON -----
+Lightweight – Minimal syntax and easy to parse.
+Readable – Uses key-value pairs, making it human-friendly.
+Data Interchange Format – Used in APIs, configuration files, and web applications.
+Supports Nested Structures – Can contain objects and arrays.
+Language-Independent – Used in almost all programming languages.
+
+
+JSON Syntax Rules
+Data is stored as key-value pairs.
+Keys must be strings, and values can be strings, numbers, arrays, objects, booleans, or null.
+JSON data is enclosed in curly braces {}.
+Arrays are enclosed in square brackets [].
+No trailing commas.
+
+Working with JSON in JavaScript
+1. Convert JSON to JavaScript Object (JSON.parse()) ----
+const jsonString = '{"name": "Akash", "age": 25}';
+const obj = JSON.parse(jsonString);
+console.log(obj.name); // Output: Akash
+
+
+2. Convert JavaScript Object to JSON (JSON.stringify()) ----
+
+const person = { name: "Akash", age: 25 };
+const jsonString = JSON.stringify(person);
+console.log(jsonString); // Output: '{"name":"Akash","age":25}'
+
+Convert an Object into an Array in JavaScript -----
+In JavaScript, you can convert an object into an array using methods like Object.keys(), Object.values(), and Object.entries().
+
+1️⃣ Convert Object Keys to an Array (Object.keys()) ----
+If you only need the keys of an object as an array:
+
+const user = { name: "Akash", age: 25, role: "Developer" };
+const keysArray = Object.keys(user);
+
+console.log(keysArray);
+// Output: ["name", "age", "role"]
+
+
+2️⃣ Convert Object Values to an Array (Object.values()) -----
+If you only need the values of an object:
+
+const user = { name: "Akash", age: 25, role: "Developer" };
+const valuesArray = Object.values(user);
+
+console.log(valuesArray);
+// Output: ["Akash", 25, "Developer"]
+
+
+3️⃣ Convert Object into an Array of Key-Value Pairs (Object.entries()) ----
+If you want both keys and values in an array format:
+
+const user = { name: "Akash", age: 25, role: "Developer" };
+const entriesArray = Object.entries(user);
+
+console.log(entriesArray);
+
+Output:
+[
+  ["name", "Akash"],
+  ["age", 25],
+  ["role", "Developer"]
+]
+
+
+
+4️⃣ Convert Object with Multiple Objects into an Array -----
+If an object contains multiple objects, you can use Object.values() to get an array of objects.
+const users = {
+  user1: { name: "Akash", age: 25 },
+  user2: { name: "Tom", age: 30 },
+};
+
+const usersArray = Object.values(users);
+
+console.log(usersArray);
+
+Output:
+[
+  { name: "Akash", age: 25 },
+  { name: "Tom", age: 30 }
+]

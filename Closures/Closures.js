@@ -21,3 +21,11 @@ var sum = function (a) {
 
 var store = sum(2);
 console.log(store(5));
+
+
+// Advantages of Closures in JavaScript 😎
+// Currying
+// Data Hiding/Encapsulation
+
+// Disadvantages of Closures in JavaScript 😅
+// Overconsumption of memory or memory leaks can happen.

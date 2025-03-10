@@ -1,0 +1,58 @@
+Reverse string ✅
+Remove duplicates ✅
+Can you write a function in JavaScript to convert a string containing hyphens and underscores to camel case? transformation of the string “secret_key_one” into camel case results in “secretKeyOne.”
+Swap two numbers 
+Flatten this array
+Implement a function to check if two arrays are equal.
+Implement a function to perform a deep comparison of two objects
+Write a function that generates all permutations of a string.
+Write a function to find the maximum sum of a subarray in an array of integers
+Implement a function to find the longest substring without repeating characters.
+Find the Largest Number in an Array: ✅
+Find the Longest Word
+Count Vowels
+Find Missing Number
+Check for Palindrome ✅
+Find the First Non-Repeated Character
+Max/Min in array ✅
+Second Largest in an array ✅
+Find Even and odd in an array ✅
+Factorial of a number ✅
+Prime Number in javascript
+find vowels in string
+Palindrome in javascript ✅
+Convert first letter in uppercase in string
+fibonacci Number ✅
+Number of occurrence of character in string ✅
+
+## Top JavaScript Array and String Coding Questions
+
+1. Reverse a string  ✅
+2. Remove duplicates from an array ✅
+3. Convert a string with hyphens and underscores to camel case
+4. Swap two numbers without using a temporary variable
+5. Flatten a nested array
+6. Check if two arrays are equal
+7. Perform a deep comparison of two objects
+8. Generate all permutations of a string
+9. Find the maximum sum of a subarray
+10. Find the longest substring without repeating characters
+11. Find the largest number in an array  ✅
+12. Find the longest word in a string  ✅
+13. Count the number of vowels in a string
+14. Find the missing number in an array
+15. Check if a string is a palindrome  ✅
+16. Find the first non-repeated character in a string 
+17. Find the maximum and minimum values in an array
+18. Find the second largest number in an array ✅
+19. Separate even and odd numbers in an array
+20. Calculate the factorial of a number ✅
+21. Check if a number is prime ✅
+22. Find all vowels in a string 
+23. Convert the first letter of each word in a string to uppercase
+24. Generate Fibonacci numbers ✅
+25. Count the occurrences of each character in a string ✅
+
+Javascript object related coding questions
+
+

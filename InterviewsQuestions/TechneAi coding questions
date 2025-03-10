@@ -1,0 +1,52 @@
+
+// let obj = {
+//     "firstName": "Akash",
+//     "lastName" : "Kushwah",
+//     "location" : {
+//         "state" : "Madhya Pradesh",
+//         "city" : "Bhopal"
+//     }
+// }
+
+//   const {state,city,country } = obj.location;
+    
+//   console.log(obj.location.state);
+//   console.log(obj.location.city);
+//   console.log(obj.location[country]);
+
+// let obj2 = obj;
+
+// console.log( "object 2: ", obj2);
+// obj2.firstName = "Vikas";
+// obj2.location.state = "Maharastra";
+
+// console.log("object2 :", obj2);
+// callback function
+function Hello(name,callback){
+    console.log("Hello everyone");
+    
+}
+Hello();
+function Hello2(){
+    let name = "Akash";
+    console.log("Hello",name);
+}
+    
+    function executeCallback(callback) {
+        if (typeof callback === 'function') {
+            callback();
+        } else {
+            console.log('Provided argument is not a function');
+        }
+    }
+
+    // Example usage
+    executeCallback(function() {
+        console.log('Callback function executed');
+    });
+
+    // callback function example
+    function sayHello(name, callback) {
+        const message = `Hello, ${name}!`;
+        callback(message);
+    }

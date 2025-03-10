@@ -1,4 +1,4 @@
-
+var                                
 const
 let
 Arrow functions
@@ -6,7 +6,7 @@ Template literal
 Object and Array Desctructuring
 Default Parameters
 Classes
-Rest parameter and spread operator
+Rest parameter and spread operator,ternary operator
 for/of Loop
 JavaScript Maps and Sets
 Promises

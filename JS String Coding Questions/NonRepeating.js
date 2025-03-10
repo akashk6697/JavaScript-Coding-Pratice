@@ -1,7 +1,6 @@
+///  (1)Find the first non-repeating character
 
-///  Find the first non-repeating character
-
-
+/// 1st approach
 function firstNonRepeatingChar(str) {
     const charCount = {};
   
@@ -38,7 +37,7 @@ function firstNonRepeatingChar(str) {
 
 
   
-///  Find the first repeating character
+///  (2)Find the first repeating character
 
 /// 1st approach
 function firstRepeatingCharacter(str) {

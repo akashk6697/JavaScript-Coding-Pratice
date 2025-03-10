@@ -60,3 +60,17 @@ function fruit(){
     let price = 20;
 }
 fruit();
+
+
+//// array
+
+let a = [1,2,3];
+let b = a;
+b[0] = 5;
+console.log(a);
+
+
+let a = 5;
+let a = 6;
+
+console.log(a);

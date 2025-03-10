@@ -2,7 +2,7 @@
 
 ////Using JavaScript filter() Method
 
-let arr = ["apple", "mango", "apple", "orange", "mango", "mango"];
+//let arr = ["apple", "mango", "apple", "orange", "mango", "mango"];
 const array = [1, 2, 3, 4, 2, 3, 5];
 function removeDuplicates(arr) {
   return arr.filter((item, index) => arr.indexOf(item) === index);
@@ -17,7 +17,7 @@ function removeDuplicates(arr) {
   return [...new Set(arr)];
 }
 
-console.log(removeDuplicates(arr));
+console.log(removeDuplicates(arr1));
 
 ////Using JavaScript forEach() Method
 
@@ -32,7 +32,7 @@ function removeDuplicates(arr) {
   });
   return unique;
 }
-console.log(removeDuplicates(arr));
+console.log(removeDuplicates(arr2));
 
 ////Using JavaScript reduce() Method
 
@@ -45,7 +45,7 @@ function removeDuplicates(arr) {
   }, []);
   return unique;
 }
-console.log(removeDuplicates(arr));
+console.log(removeDuplicates(arr3));
 
 ////Using JavaScript indexOf() Method
 
@@ -60,4 +60,32 @@ function removeDuplicates(arr) {
   }
   return unique;
 }
-console.log(removeDuplicates(arr));
+console.log(removeDuplicates(arr4));
+
+//// without method
+
+const arr5 = [1, 2, 3, 4, 2, 3, 5];
+function removeDuplicates(arr) {
+  const uniqueArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let isDuplicate = false;
+
+    // Check if the item already exists in uniqueArray
+    for (let j = 0; j < uniqueArray.length; j++) {
+      if (arr[i] === uniqueArray[j]) {
+        isDuplicate = true;
+        break;
+      }
+    }
+
+    // If the item is not found in uniqueArray, add it
+    if (!isDuplicate) {
+      uniqueArray.push(arr[i]);
+    }
+  }
+
+  return uniqueArray;
+}
+
+console.log(removeDuplicates(arr5));
