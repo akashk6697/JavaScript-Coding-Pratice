@@ -1,75 +1,91 @@
-(1) Event Loop
-In JavaScript, the event loop plays an important role in managing asynchronous operations and ensures the 
-non-blocking behavior of the language. JavaScript is single-threaded, meaning it processes one task at a time
- and an event loop helps to handle asynchronous tasks efficiently. When an asynchronous operation, 
- like a setTimeout callback or a user event, is initiated, it gets delegated to the browser’s APIs, allowing 
- the main thread to remain unblocked. Once the operation is complete, a callback function is placed in the 
- callback queue.
+ Event Loop - 
+ JavaScript is a single-threaded language, meaning it executes one operation at a time within a single execution thread (Call Stack). However, JavaScript handles asynchronous operations efficiently using the Event Loop, which manages different queues such as the Microtask Queue and the Callback Queue.
 
-The event loop continuously checks two main components: the call stack and the callback queue. 
-The call stack keeps track of the currently executing function or task, while the callback queue stores
- callback functions waiting to be processed. If the call stack is empty, the event loop takes the first 
- callback from the queue and pushes it onto the call stack for execution.
+Execution Phases in JavaScript ------ 
+JavaScript executes code in two major phases:
 
-(2) What is Event propagation, capturing, bubbling  ----
-
-Event Propagation determines in which order the elements receive the event. There are two ways to handle this
- event propagation order of HTML DOM is Event Bubbling and Event Capturing.
-
-Event Bubbling ----
-Event bubbling is a method of event propagation in the HTML DOM API when an event is in an element inside 
-another element, and both elements have registered a handle to that event. It is a process that starts with
- the element that triggered the event and then bubbles up to the containing elements in the hierarchy. 
- In event bubbling, the event is first captured and handled by the innermost element and then propagated to 
- outer elements.
+1. Synchronous Execution (Main Thread / Call Stack)
+2. Asynchronous Execution (Microtask & Callback Queues)
 
 
-Syntax ---- addEventListener(type, listener, useCapture)
+1. Synchronous Execution (Main Thread / Call Stack)
+Synchronous code is executed line-by-line from top to bottom. It gets executed immediately in the Call Stack.
 
-Event Capturing is also one of the Event Propagation phases. It is also known as Event Trickling. 
-It is the opposite of the event bubbling phase. In event bubbling where the event bubbles out from the target
-element to its ancestors in the DOM hierarchy, here it will go down through the ancestor to the target element.
-This downward propagation of the events is known as Event Capturing. You can enable Event Capturing by passing
- a third parameter as a true value to the addEventListener() method at the time of attaching an event using it.
+How the Call Stack Works ---- 
+JavaScript uses a Call Stack, which follows the LIFO (Last In, First Out) principle.
+When a function is called, it is pushed onto the Call Stack.
+When a function finishes execution, it is popped off the Call Stack.
 
-Syntax ---- selectedElement.addEventListener('event', callback, true);
+Example ---- 
+console.log("Step 1"); // Sync → Executed immediately
+console.log("Step 2"); // Sync → Executed immediately
 
-Handling an event’s propagation through the DOM -----
+Execution Flow
+console.log("Step 1") → Executed and removed from the Call Stack.
+console.log("Step 2") → Executed and removed from the Call Stack.
 
-event.preventDefault(): Stops the default browser behavior for that event.
-event.stopPropagation(): Stops the propagation of the event on the next elements (whether descendants in 
-the Capture phase, or ancestors in the Bubbling phase)
-event.stopImmediatePropagation(): Similar to “event.stopPropagation()”, but also stops the propagation on
- other listeners in the same element.
+Call Stack Flow
 
-(3) Phases of JavaScript Event ----
-   
-   There are 3 different phases during the lifecycle of a JavaScript event.
+Call Stack:
+-----------------
+console.log("Step 1")  // Executes and removed
+console.log("Step 2")  // Executes and removed
+-----------------
+📌 Key Point: Synchronous code runs first before any asynchronous operations.
 
-Capturing Phase
-Target Phase
-Bubbling Phase
+2. Asynchronous Execution (Microtask & Callback Queues)
+JavaScript can handle asynchronous operations using the Event Loop, which manages two important queues:
 
- Capturing Phase is when the event goes down to the element. The target phase is when the event reaches the 
- element and the Bubbling phase is when the event bubbles up from the element.
+(1) Microtask Queue (Highest Priority)
 
- The addEventListener() method will be called during the Bubbling phase.
-   The addEventListener() method attaches an event handler to the specified element.
+Includes Promises (.then(), .catch(), .finally()) and queueMicrotask().
+Executes immediately after synchronous code but before the Callback Queue.
 
-Syntax: element.addEventListener(event, function, useCapture)
-  The third parameter use capture is usually set to false as it is not used.
-(4) Event Delegation in JavaScript -----
+(2) Callback Queue (Macrotask Queue)
 
-Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to 
-each and every similar element, we can add an event listener to a parent element and call an event on a 
-particular target using the .target property of the event object.
+Includes setTimeout, setInterval, setImmediate (Node.js), and I/O callbacks.
+Executes after the Microtask Queue.
 
 
-Event Listeners
+Understanding the Event Loop
+The Event Loop is responsible for:
 
-onClick
-onBlur
-onChange
-onFocus
+Executing all synchronous code first.
+Executing all Microtasks (Promises, queueMicrotask).
+Executing all Macrotasks (setTimeout, setInterval, setImmediate, etc.).
 
-setTimeout() & setInterval()
+
+Example to Demonstrate Synchronous & Asynchronous Execution
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout Callback");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise Resolved");
+});
+
+console.log("End");
+
+
+Step-by-Step Execution:
+(1) Synchronous Code (Executed First)
+
+"Start" is logged immediately.
+setTimeout(...) is registered and moved to the Callback Queue (not executed yet).
+Promise.resolve().then(...) is moved to the Microtask Queue (not executed yet).
+"End" is logged immediately.
+
+(2) Microtask Queue Execution (Higher Priority)
+
+"Promise Resolved" is logged before setTimeout because Microtasks execute before Macrotasks.
+
+(3) Callback Queue Execution (Lower Priority)
+
+"Timeout Callback" is logged last because it is in the Callback Queue.
+
+Start
+End
+Promise Resolved
+Timeout Callback
